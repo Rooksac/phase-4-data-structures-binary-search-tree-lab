@@ -8,7 +8,15 @@ class BinarySearchTree
   end
 
   def search(value)
-    # your code here
+    cur_node = root
+    until cur_node.value == value || cur_node.value == nil
+      if value > cur_node.value
+        cur_node = cur_node.right
+      else
+        cur_node = cur_node.left
+      end
+    end
+    return cur_node
   end
 
   def insert(value)
